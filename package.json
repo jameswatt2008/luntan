@@ -1,22 +1,24 @@
 {
-  "name": "server",
-  "version": "0.0.0",
-  "private": true,
+  "name": "express-vercel",
+  "version": "0.5.0",
+  "description": "express vercel boilerplate",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "vercel dev",
+    "test": "jest -i"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "ejs": "~2.5.7",
-    "express": "~4.16.0",
-    "express-session": "^1.15.6",
-    "http-errors": "~1.6.2",
-    "mongodb": "^4.1.1",
-    "mongoose": "^5.4.0",
-    "morgan": "~1.9.0",
-    "multer": "^1.4.1",
-    "socket.io": "^2.2.0"
+    "express": "^4.17.1",
+    "helmet": "^4.6.0"
+  },
+  "keywords": [
+    "vercel"
+  ],
+  "author": "Kizito Akhilome <kizito@akhilo.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.3",
+    "supertest": "^6.1.3"
   }
 }
