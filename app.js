@@ -40,6 +40,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
+app.use('/users', usersRouter);
+app.use('/api', apiRouter);
+app.use('/post', postRouter);
+app.use('/pl', plRouter);
+app.use('/sd', sdRouter);
+// app.use('/socket', socketio);
 // default catch all handler
 app.all('*', (req, res) => res.status(404).json(new ErrorResponseObject('route not defined')));
 
