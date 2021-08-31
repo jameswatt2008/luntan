@@ -12,7 +12,7 @@ var postRouter = require('./routes/post');
 var apiRouter = require('./routes/api');
 var plRouter = require('./routes/pl');
 var sdRouter = require('./routes/sd');
-// var socketio = require('./socket.io/index');
+var socketio = require('./socket.io/index');
 var path = require('path');
 var logger = require('morgan');
 
@@ -52,7 +52,7 @@ app.use('/api', apiRouter);
 app.use('/post', postRouter);
 app.use('/pl', plRouter);
 app.use('/sd', sdRouter);
-// app.use('/socket', socketio);
+app.use('/socket', socketio);
 // default catch all handler
 
 
