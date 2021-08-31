@@ -10,7 +10,8 @@ r.get('/', (req, res) => res.json(new SuccessResponseObject('接口测试')));
 
 /* GET home page. */
 r.get('/test', function (req, res, next) {
-    res.render('index', { title: '页面测试' });
+    // res.render('index', { title: '页面测试' });
+    res.send("hello test");
 });
 
 module.exports = r;
