@@ -1,5 +1,10 @@
 const express = require('express');
 const helmet = require('helmet');
+var createError = require('http-errors');
+
+
+
+
 const { ErrorResponseObject } = require('./common/http');
 const routes = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -9,6 +14,8 @@ var plRouter = require('./routes/pl');
 var sdRouter = require('./routes/sd');
 // var socketio = require('./socket.io/index');
 var path = require('path');
+var logger = require('morgan');
+
 var cookieParser = require('cookie-parser');
 
 
@@ -47,6 +54,10 @@ app.use('/pl', plRouter);
 app.use('/sd', sdRouter);
 // app.use('/socket', socketio);
 // default catch all handler
-app.all('*', (req, res) => res.status(404).json(new ErrorResponseObject('route not defined')));
+
+
+
+
+app.all('*', (req, res) => res.status(404).json(new ErrorResponseObject('接口未定义')));
 
 module.exports = app;
