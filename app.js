@@ -9,7 +9,7 @@ var plRouter = require('./routes/pl');
 var sdRouter = require('./routes/sd');
 // var socketio = require('./socket.io/index');
 var path = require('path');
-// var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser');
 
 
 
@@ -35,8 +35,8 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(helmet());
 
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
